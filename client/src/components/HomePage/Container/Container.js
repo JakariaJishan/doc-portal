@@ -2,7 +2,6 @@ import React from "react";
 import heroBg from "../../../images/bg.png";
 import Hero from "../Hero/Hero";
 import Nav from "../Nav/Nav";
-import SuperHero from "../SuperHero/SuperHero";
 const Container = () => {
   return (
     <div>
@@ -18,7 +17,6 @@ const Container = () => {
           </div>
         </div>
       </div>
-      <SuperHero/>
     </div>
   );
 };
