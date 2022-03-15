@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from '../Nav/Nav';
+import Container from '../Container/Container';
 
 const Home = () => {
     return (
         <div>
-            <Nav/>
+            <Container/>
         </div>
     );
 };
