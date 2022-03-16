@@ -22,7 +22,7 @@ const Appointment = () => {
                 </small>
               </div>
 
-              <button className="bg-gradient-to-r from-[#19D3AF] to-[#0FCFEA]  px-4 py-2 font-bold text-white rounded ">
+              <button className="bg-gradient-to-r from-[#19D3AF] to-[#0FCFEA]  px-4 py-2 font-bold text-white rounded mb-5">
                 Learn More
               </button>
             </div>
