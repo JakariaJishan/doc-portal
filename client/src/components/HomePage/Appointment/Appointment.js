@@ -1,26 +1,24 @@
 import React from "react";
-import treatment from "../../../images/treatment.png";
-const DentalCare = () => {
+import doctor from "../../../images/doctor.png";
+
+const Appointment = () => {
   return (
     <div>
-      <div className="max-w-7xl mx-auto  px-4 mb-40 sm:px-6 lg:px-8">
-        <div className="md:grid grid-cols-2 mt-5">
+      <div className="mt-20 bg-slate-300 px-5">
+        <div className="md:grid grid-cols-2 mt-5 ">
           <div className="flex justify-center items-center ">
-            <img src={treatment} width="80%"  className="object-cover" alt="sdf"></img>
+            <img src={doctor} width='' className="object-cover h-48 md:h-auto w-60 md:w-auto -mt-20 lg:-mt-40" alt="sdf"></img>
           </div>
           <div className="md:flex items-center justify-center">
             <div className="text-center md:text-left">
+              <p className="text-2xl text-[#19D3AF]">Appointment</p>
               <p className="text-2xl my-3 lg:text-5xl  text-default font-bold">
-                Exceptional Dental Care, on Your Terms
+                Make an appointment today
               </p>
               <div className="my-3 text-gray-400 lg:text-3xl">
                 <small>
                   It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsumis that it has a more-or-less
-                  normal distribution of letters,as opposed to using 'Content
-                  here, content here', making it look like readable English.
-                  Many desktop publishing packages and web page
+                  by the readable content of a page when looking at
                 </small>
               </div>
 
@@ -35,4 +33,4 @@ const DentalCare = () => {
   );
 };
 
-export default DentalCare;
+export default Appointment;

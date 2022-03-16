@@ -4,8 +4,9 @@ module.exports = {
     extend: {
       colors: {
         default: "#3A4256",
-        textDefault: '#1CC7C1'
+        textDefault: '#1CC7C1',
       },
+     
     },
     
   },
