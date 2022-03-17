@@ -6,7 +6,7 @@ const DentalCare = () => {
       <div className="max-w-7xl mx-auto  px-4 mb-40 sm:px-6 lg:px-8">
         <div className="md:grid grid-cols-2 mt-5">
           <div className="flex justify-center items-center ">
-            <img src={treatment} width="80%"  className="object-cover" alt="sdf"></img>
+            <img src={treatment}  className="object-cover w-1/2 md:w-3/4" alt="sdf"></img>
           </div>
           <div className="md:flex items-center justify-center">
             <div className="text-center md:text-left">
