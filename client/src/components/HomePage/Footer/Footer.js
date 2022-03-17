@@ -64,7 +64,7 @@ const Footer = () => {
             </div>
             <div className="mt-10">
               <p className="text-[#7E859A]">Call Now</p>
-              <button className="bg-gradient-to-r my-5 from-[#19D3AF] to-[#0FCFEA]  px-3 py-2 font-bold text-white rounded mb-5">
+              <button className="btn ">
                 +2025550295
               </button>
             </div>

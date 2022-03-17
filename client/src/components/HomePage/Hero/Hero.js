@@ -13,7 +13,7 @@ const Hero = () => {
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 
           </p>
-          <button type="button" className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-3 py-1 md:px-4 md:py-2  rounded-md font-bold text-white">GET APPOINMENT</button>
+          <button type="button" className="btn">GET APPOINMENT</button>
         </div>
         <div className="md:flex md:items-center md:justify-center mx-auto w-4/5">
           <img src={heroImg} alt="hero img"></img>

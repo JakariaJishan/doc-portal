@@ -24,7 +24,7 @@ const DentalCare = () => {
                 </small>
               </div>
 
-              <button className="bg-gradient-to-r from-[#19D3AF] to-[#0FCFEA]  px-4 py-2 font-bold text-white rounded ">
+              <button className="btn ">
                 Learn More
               </button>
             </div>
