@@ -38,7 +38,7 @@ const Testimonial = () => {
             <FontAwesomeIcon className="text-9xl text-[#D6F6F6]" icon={faQuoteLeft} />
           </div>
         </div>
-        <div className='grid md:grid-cols-3 gap-5 text-center '>
+        <div className='grid md:grid-cols-3 gap-8 text-center '>
           {
             testimialObj.map(items => <InnerTestimonial items={items}/>)
           }

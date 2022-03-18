@@ -6,7 +6,9 @@ module.exports = {
         default: "#3A4256",
         textDefault: '#1CC7C1',
       },
-     
+      backgroundImage: {
+        'quoteImg' : "url('./images/left-quote.png')"
+      }
     },
     
   },
