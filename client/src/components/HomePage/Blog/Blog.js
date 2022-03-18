@@ -26,7 +26,7 @@ const Blog = () => {
     ]
     return (
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-            <div className='mt-12'>
+            <div className='my-12'>
             <p className='text-textDefault font-bold text-2xl text-center'>Our Blog</p>
             <p className='text-default font-bold text-3xl md:text-4xl mt-3 text-center'>From Our Blog News</p>
             </div>

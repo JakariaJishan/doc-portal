@@ -2,5 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 .btn {
-  @apply bg-gradient-to-r from-[#19D3AF] to-[#0FCFEA] hover:bg-gradient-to-tr hover:from-[#0FCFEA] hover:to-[#dbdbdb] px-4 py-2 font-bold text-white rounded mb-5  !important;
+  @apply bg-gradient-to-r from-[#19D3AF] to-[#0FCFEA]   hover:bg-none hover:bg-textDefault  px-4 py-2 font-bold text-white rounded mb-5  !important;
 }

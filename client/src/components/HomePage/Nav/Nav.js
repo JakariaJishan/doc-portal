@@ -22,41 +22,41 @@ const Nav = () => {
                 <div className="ml-10 flex items-baseline space-x-4 ">
                   <a
                     href="#"
-                    className=" bg-gradient-to-r hover:from-green-400 hover:to-blue-500 text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className=" bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Home
                   </a>
 
                   <a
                     href="#"
-                    className="text-gray-300 bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     About
                   </a>
 
                   <a
                     href="#"
-                    className="text-gray-300 bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Dental Services
                   </a>
 
                   <a
                     href="#"
-                    className="text-gray-300 bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Reviews
                   </a>
 
                   <a
                     href="#"
-                    className="text-gray-300 bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Blog
                   </a>
                   <a
                     href="#"
-                    className="text-gray-300 bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Contact us
                   </a>
@@ -124,41 +124,41 @@ const Nav = () => {
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a
                   href="#"
-                  className="bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                  className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Home
                 </a>
 
                 <a
                   href="#"
-                  className="bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                  className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   About
                 </a>
 
                 <a
                   href="#"
-                  className="bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                  className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Dental Services
                 </a>
 
                 <a
                   href="#"
-                  className="bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                  className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Reviews
                 </a>
 
                 <a
                   href="#"
-                  className="bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                  className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Blog
                 </a>
                 <a
                   href="#"
-                  className="bg-gradient-to-r hover:from-green-400 hover:to-blue-500 hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                  className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Contact Us
                 </a>
