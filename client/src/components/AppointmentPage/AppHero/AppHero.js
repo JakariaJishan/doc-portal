@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Calendar } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import bg from "../../../images/bg.png";
 import heroImg from "../../../images/chair.png";
 import "./AppHero.css";
 const AppHero = () => {
@@ -10,12 +9,12 @@ const AppHero = () => {
   return (
     <div
       className=""
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
+      // style={{
+      //   backgroundImage: `url(${bg})`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPosition: "center",
+      //   backgroundSize: "cover",
+      // }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 md:gap-3 my-3 ">
