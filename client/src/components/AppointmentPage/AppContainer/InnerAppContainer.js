@@ -13,7 +13,7 @@ const InnerAppContainer = (props) => {
         <p className="text-sm text-gray-400 my-4">10 space availabe</p>
         <button className="btn" onClick={() => setShowModal(true)}>BOOK APPOINTMENT</button>
       </div>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Modal showModal={showModal} setShowModal={setShowModal} name={name} />
       
     </div>
   );

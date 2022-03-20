@@ -5,16 +5,10 @@ import heroImg from "../../../images/chair.png";
 import "./AppHero.css";
 const AppHero = () => {
   const [value, onChange] = useState(new Date());
-  console.log(value);
+  console.log(value)
   return (
     <div
-      className=""
-      // style={{
-      //   backgroundImage: `url(${bg})`,
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundPosition: "center",
-      //   backgroundSize: "cover",
-      // }}
+     
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 md:gap-3 my-3 ">
