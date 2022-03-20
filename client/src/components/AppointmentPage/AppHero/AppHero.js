@@ -3,13 +3,11 @@ import { Calendar } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import heroImg from "../../../images/chair.png";
 import "./AppHero.css";
-const AppHero = () => {
+const AppHero = ({setAppointmentDate}) => {
   const [value, onChange] = useState(new Date());
-  console.log(value)
+  setAppointmentDate(value)
   return (
-    <div
-     
-    >
+    <div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 md:gap-3 my-3 ">
           <div className=" flex flex-col justify-center items-center  m-5 ">
