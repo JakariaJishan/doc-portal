@@ -22,10 +22,10 @@ client.connect(err => {
       const appointment = req.body;
       console.log(appointment);
       res.send(appointment)
-    //   appointmentCollection.insertOne(appointment)
-    //   .then(result => {
-    //       console.log(result)
-    //   })
+      appointmentCollection.insertOne(appointment)
+      .then(result => {
+          console.log(result)
+      })
   })
 });
 

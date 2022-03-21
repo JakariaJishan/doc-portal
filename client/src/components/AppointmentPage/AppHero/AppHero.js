@@ -5,7 +5,7 @@ import heroImg from "../../../images/chair.png";
 import "./AppHero.css";
 const AppHero = ({setAppointmentDate}) => {
   const [value, onChange] = useState(new Date());
-  setAppointmentDate(value)
+  setAppointmentDate(value.toString())
   return (
     <div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,6 +13,7 @@ const AppHero = ({setAppointmentDate}) => {
           <div className=" flex flex-col justify-center items-center  m-5 ">
             <p className="font-bold text-3xl my-5">APPOINMENT</p>
             <Calendar
+            
               onChange={onChange}
               value={value}
               className="p-5 shadow-lg rounded text-center calender-style"

@@ -13,7 +13,8 @@ const Modal = ({ showModal, setShowModal, name }) => {
   } = useForm();
   const onSubmit = (data) => {
     data.date = new Date();
-    data.appointmentDate = appointmentDate;
+    data.appointmentDate = appointmentDate ;
+    console.log(appointmentDate)
     data.service = name;
     fetch("http://localhost:5000/addAppointment", {
       method: "POST",
