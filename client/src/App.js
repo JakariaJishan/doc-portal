@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppointmentMain from "./components/AppointmentPage/AppointmentMain/AppointmentMain";
-import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import DashHome from "./components/Dashboard/DashHome/DashHome";
 import Home from './components/HomePage/Home/Home';
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/appointment" element={<AppointmentMain/>} />
-      <Route path="/dashboard/*" element={<Dashboard/>} />
+      <Route path="/dashboard/*" element={<DashHome/>} />
     </Routes>
    </BrowserRouter>
   );

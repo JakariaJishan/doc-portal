@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
 import { Calendar } from "react-calendar";
 import AppointmentByDate from "../../AppointmentPage/AppContainer/AppointmentByDate";
@@ -16,14 +17,17 @@ const DashAppointment = () => {
       .then((result) => setAppointmentData(result));
   }, [newDate]);
   return (
-    <div className="flex">
+    <div className="left-32 absolute ">
+      <p className="font-bold m-3">Appointments</p>
+      <div className="grid md:grid-cols-2 gap-5">
       <Calendar
         onChange={onChange}
         value={value}
-        className="p-5 shadow-lg rounded text-center calender-style"
+        className="p-5 mx-3 h-10 shadow-lg rounded w-full text-center calender-style"
       />
-
-      <AppointmentByDate appointmentData={appointmentData} />
+      <AppointmentByDate appointmentData={appointmentData} date={format(value, "LLLL dd, yyyy")} />
+      </div>
+      
     </div>
   );
 };

@@ -14,7 +14,6 @@ const Modal = ({ showModal, setShowModal, name }) => {
   const onSubmit = (data) => {
     data.date = new Date();
     data.appointmentDate = appointmentDate ;
-    console.log(appointmentDate)
     data.service = name;
     fetch("http://localhost:5000/addAppointment", {
       method: "POST",
