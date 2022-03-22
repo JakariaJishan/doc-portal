@@ -1,4 +1,4 @@
-import { faCalendar, faDashboard } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightFromBracket, faCalendar, faDashboard, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import "react-pro-sidebar/dist/css/styles.css";
@@ -43,6 +43,14 @@ const Sidebar = () => {
         >
           <FontAwesomeIcon icon={faCalendar}></FontAwesomeIcon> Appointment
         </Link>
+        <Link
+          to="/dashboard/patients"
+          onClick={() => setShowSidebar(false)}
+          className="  font-semibold text-white mb-3 focus:text-gray-700"
+        >
+          <FontAwesomeIcon icon={faUserGroup}></FontAwesomeIcon> Patients
+        </Link>
+        <button className="fixed bottom-5 bg-default px-4 py-3 rounded-md"> <FontAwesomeIcon className="mr-3" icon={faArrowRightFromBracket}></FontAwesomeIcon>Log Out</button>
       </div>
     </div>
   );
