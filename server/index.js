@@ -38,6 +38,11 @@ client.connect((err) => {
       })
       
   });
+  app.get('/allPatients' , (req,res) => {
+    appointmentCollection.find({}).toArray((err, document)=>{
+      res.send(document)
+    })
+  })
 });
 
 app.listen(port);

@@ -9,6 +9,12 @@ const AppointmentByDate = (props) => {
                 <p className='text-textDefault'>Appointments</p>
                 <p className='text-[#A6A4A4] text-sm'>{props.date}</p>
             </div>
+            <div className='grid grid-cols-3 gap-3 text-gray-500 my-3 '>
+                <p>Name</p> 
+                <p>Schedule</p> 
+                <p>Action</p> 
+                
+            </div>
             {
               userData.length? userData.map(item => <AppointmentTable item={item}/>): <p>no data found</p>
             }

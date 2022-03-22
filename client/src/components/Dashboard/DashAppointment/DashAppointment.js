@@ -17,17 +17,19 @@ const DashAppointment = () => {
       .then((result) => setAppointmentData(result));
   }, [newDate]);
   return (
-    <div className="left-32 absolute ">
+    <div className="left-32 md:left-72 absolute">
       <p className="font-bold m-3">Appointments</p>
       <div className="grid md:grid-cols-2 gap-5">
-      <Calendar
-        onChange={onChange}
-        value={value}
-        className="p-5 mx-3 h-10 shadow-lg rounded w-full text-center calender-style"
-      />
-      <AppointmentByDate appointmentData={appointmentData} date={format(value, "LLLL dd, yyyy")} />
+        <Calendar
+          onChange={onChange}
+          value={value}
+          className="p-5 mx-3  shadow-lg rounded w-full text-center calender-style "
+        />
+        <AppointmentByDate
+          appointmentData={appointmentData}
+          date={format(value, "LLLL dd, yyyy")}
+        />
       </div>
-      
     </div>
   );
 };

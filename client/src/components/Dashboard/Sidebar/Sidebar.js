@@ -1,3 +1,5 @@
+import { faCalendar, faDashboard } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Link } from "react-router-dom";
@@ -29,17 +31,17 @@ const Sidebar = () => {
       )} */}
 
       <div
-        className={` w-32  fixed h-full top-0 left-0   flex flex-col bg-gradient-to-tr  to-[#19D3AF] from-[#0FCFEA] pt-12  p-3 text-white   `}
+        className={` w-32 md:w-72 fixed h-full top-0 left-0   flex flex-col bg-gradient-to-tr  to-[#19D3AF] from-[#0FCFEA] pt-12 text-sm  p-3 text-white md:text-xl md:px-10  `}
       >
-        <Link to="/dashboard/dashboard" className="  font-semibold text-white">
-          Dashboard
+        <Link to="/dashboard/dashboard" className="  font-semibold text-white mb-3 focus:text-gray-700">
+         <FontAwesomeIcon icon={faDashboard}></FontAwesomeIcon> Dashboard
         </Link>
         <Link
           to="/dashboard/appointment"
           onClick={() => setShowSidebar(false)}
-          className="  font-semibold text-white"
+          className="  font-semibold text-white mb-3 focus:text-gray-700"
         >
-          Appointment
+          <FontAwesomeIcon icon={faCalendar}></FontAwesomeIcon> Appointment
         </Link>
       </div>
     </div>
