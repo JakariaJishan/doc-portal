@@ -28,7 +28,7 @@ const SuperHero = () => {
     },
   ];
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="md:grid md:grid-cols-3 mx-3 mt-5 lg:mt-20  gap-4 ">
         {superHeroObj.map((elem) => (
           <InnerSuperHero elem={elem} />

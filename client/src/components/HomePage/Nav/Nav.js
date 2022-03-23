@@ -21,41 +21,41 @@ const Nav = () => {
               <div className="hidden md:block ">
                 <div className="ml-10 flex items-baseline space-x-4 ">
                   <a
-                    href="#"
+                    href="#home"
                     className=" bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Home
                   </a>
 
                   <a
-                    href="#"
+                    href="#about"
                     className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     About
                   </a>
 
                   <a
-                    href="#"
+                    href="#services"
                     className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Dental Services
                   </a>
 
                   <a
-                    href="#"
+                    href="#reviews"
                     className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Reviews
                   </a>
 
                   <a
-                    href="#"
+                    href="#blog"
                     className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Blog
                   </a>
                   <a
-                    href="#"
+                    href="#contact"
                     className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Contact us
@@ -123,41 +123,41 @@ const Nav = () => {
             <div className="absolute w-full backdrop-blur-md  right-0 z-10  h-screen  md:hidden" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a
-                  href="#"
+                  href="#home"
                   className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Home
                 </a>
 
                 <a
-                  href="#"
+                  href="#about"
                   className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   About
                 </a>
 
                 <a
-                  href="#"
+                  href="#services"
                   className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Dental Services
                 </a>
 
                 <a
-                  href="#"
+                  href="#reviews"
                   className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Reviews
                 </a>
 
                 <a
-                  href="#"
+                  href="#blog"
                   className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Blog
                 </a>
                 <a
-                  href="#"
+                  href="#contact"
                   className="bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Contact Us

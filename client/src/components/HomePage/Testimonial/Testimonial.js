@@ -28,7 +28,7 @@ const Testimonial = () => {
   ]
   return (
     <div>
-      <div className="max-w-7xl mx-auto  px-4  sm:px-6 lg:px-8">
+      <div id="reviews" className="max-w-7xl mx-auto  px-4  sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 p-5 mt-6 text-center">
           <div className=" md:text-left">
             <p className="text-2xl font-bold text-[#64CCCC]">Testimonial</p>

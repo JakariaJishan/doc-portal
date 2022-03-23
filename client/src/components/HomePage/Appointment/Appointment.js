@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import appoinmentBg from "../../../images/appointment-bg.png";
 import doctor from "../../../images/doctor.png";
 const Appointment = () => {
   return (
-    <div
+    <div id=""
       style={{
         backgroundImage: `url(${appoinmentBg})`,
         backgroundRepeat: "no-repeat",
@@ -34,9 +35,9 @@ const Appointment = () => {
                   </small>
                 </div>
 
-                <button className="btn">
+                <Link to='/appointment'  className="btn">
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </div>

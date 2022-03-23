@@ -2,7 +2,7 @@ import React from "react";
 import contactBg from "../../../images/appointment-bg.png";
 const ContactUs = () => {
   return (
-    <div
+    <div id="contact"
       style={{
         backgroundImage: `url(${contactBg})`,
         backgroundPosition: "center",

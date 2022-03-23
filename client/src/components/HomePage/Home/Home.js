@@ -12,7 +12,7 @@ import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
     return (
-        <div>
+        <div id='home'>
             <Container/>
             <SuperHero/>
             <Services/>
@@ -23,6 +23,8 @@ const Home = () => {
             <Doctors/>
             <ContactUs/>
             <Footer/>
+            
+            
         </div>
     );
 };

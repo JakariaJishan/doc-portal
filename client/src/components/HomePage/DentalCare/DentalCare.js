@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import treatment from "../../../images/treatment.png";
 const DentalCare = () => {
   return (
@@ -24,9 +25,9 @@ const DentalCare = () => {
                 </small>
               </div>
 
-              <button className="btn ">
+              <Link to='/appointment' className="btn ">
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
         </div>
