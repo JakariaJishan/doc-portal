@@ -1,10 +1,11 @@
 import { Transition } from "@headlessui/react";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  
   return (
     <div>
       <nav className="">
@@ -47,7 +48,6 @@ const Nav = () => {
                   >
                     Reviews
                   </a>
-
                   <a
                     href="#blog"
                     className="text-gray-300 bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -60,6 +60,10 @@ const Nav = () => {
                   >
                     Contact us
                   </a>
+                  <Link to='/login'><button className="btn" >
+                    Log In
+                  </button></Link>
+                  
                 </div>
               </div>
             </div>
@@ -120,7 +124,10 @@ const Nav = () => {
           leaveTo="opacity-0 scale-95"
         >
           {(ref) => (
-            <div className="absolute w-full backdrop-blur-md  right-0 z-10  h-screen  md:hidden" id="mobile-menu">
+            <div
+              className="absolute w-full backdrop-blur-md  right-0 z-10  h-screen  md:hidden"
+              id="mobile-menu"
+            >
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a
                   href="#home"
@@ -162,6 +169,9 @@ const Nav = () => {
                 >
                   Contact Us
                 </a>
+                <Link to='/login'><button className="btn" >
+                    Log In
+                  </button></Link>
               </div>
             </div>
           )}

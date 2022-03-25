@@ -24,7 +24,6 @@ const Home = () => {
             <ContactUs/>
             <Footer/>
             
-            
         </div>
     );
 };
