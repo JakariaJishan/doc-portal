@@ -39,6 +39,7 @@ client.connect((err) => {
       
   });
   app.get('/allPatients' , (req,res) => {
+    console.log(req.query.email)
     appointmentCollection.find({}).toArray((err, document)=>{
       res.send(document)
     })

@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { LoginContext } from '../../../App';
 import DashboardTable from './DashboardTable';
 
 const Dashboard = () => {
     const [patients, setPatients] = useState([]);
+    const value = useContext(LoginContext);
+    console.log(value)
     useEffect(() => {
         fetch('http://localhost:5000/allPatients')
         .then(res => res.json())

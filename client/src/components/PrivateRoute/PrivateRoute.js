@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
-import { LoginContext } from "../LogIn/Login";
+import { LoginContext } from "../../App";
 
 const PrivateRoute = ({ children }) => {
-    const value = useContext(LoginContext);
-    console.log(value)
-  const user = false;
+  const value = useContext(LoginContext);
+  const user = value.email;
   return user ? children : <Navigate to="/login" />;
 };
 
