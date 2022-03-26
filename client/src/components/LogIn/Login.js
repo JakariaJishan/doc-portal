@@ -2,6 +2,10 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { app } from "../../firebase.config";
+
+
+
+
 const Login = ({ setCollectUser }) => {
   const [loggedInUser, setLoggedInUser] = useState({
     name: "",
@@ -20,6 +24,7 @@ const Login = ({ setCollectUser }) => {
         const user = result.user;
         setLoggedInUser({ name: user.displayName, email: user.email });
         fireAuthToken();
+
         navigate("/appointment");
         // ...
       })
@@ -38,8 +43,15 @@ const Login = ({ setCollectUser }) => {
   setCollectUser(loggedInUser);
 
   const fireAuthToken = () => {
-   console.log('hell')
-  }
+      getAuth()
+      .currentUser.getIdToken(/* forceRefresh */ true)
+      .then(function (idToken) {
+        sessionStorage.setItem("authToken", idToken);
+      })
+      .catch(function (error) {
+        // Handle error
+      });
+  };
   return (
     <div>
       <button className="btn" onClick={handleLogIn}>
