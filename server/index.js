@@ -64,7 +64,6 @@ client.connect((err) => {
         .verifyIdToken(idtoken)
         .then((decodedToken) => {
           const decodedEmail = decodedToken.email;
-          console.log({ decodedEmail }, { userEmail });
           if (decodedEmail == userEmail)
             appointmentCollection
               .find({ email: userEmail })
