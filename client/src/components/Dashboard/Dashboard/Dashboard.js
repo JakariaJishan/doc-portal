@@ -5,9 +5,9 @@ import DashboardTable from "./DashboardTable";
 const Dashboard = () => {
   const [patients, setPatients] = useState([]);
   const value = useContext(LoginContext);
-  console.log(value);
+  const userEmail= sessionStorage.getItem('userEmail');
   useEffect(() => {
-    fetch("http://localhost:5000/allPatients", {
+    fetch("http://localhost:5000/allPatients?email="+userEmail, {
       headers: {
         Authorization: `Bearer ${sessionStorage.getItem("authToken")}`,
       },

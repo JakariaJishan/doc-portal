@@ -24,7 +24,7 @@ const Login = ({ setCollectUser }) => {
         const user = result.user;
         setLoggedInUser({ name: user.displayName, email: user.email });
         fireAuthToken();
-
+        sessionStorage.setItem('userEmail', user.email);
         navigate("/appointment");
         // ...
       })
