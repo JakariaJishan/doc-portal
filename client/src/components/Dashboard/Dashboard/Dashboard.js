@@ -9,6 +9,7 @@ const Dashboard = () => {
   useEffect(() => {
     fetch("http://localhost:5000/allPatients?email="+userEmail, {
       headers: {
+        headers: { 'Content-Type': 'application/json'},
         Authorization: `Bearer ${sessionStorage.getItem("authToken")}`,
       },
     })

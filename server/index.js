@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const port = 5000;
 const cors = require("cors");
-const { initializeApp } = require("firebase-admin/app");
 require("dotenv").config();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,11 +24,12 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+
 client.connect((err) => {
   const appointmentCollection = client
     .db("doctorsPortal")
@@ -53,6 +53,9 @@ client.connect((err) => {
   app.get("/allPatients", (req, res) => {
     const bearer = req.headers.authorization;
     const userEmail = req.query.email;
+    appointmentCollection.find({}).toArray((err, document) => {
+      res.send(document);
+    });
     if (bearer && bearer.startsWith("Bearer ")) {
       const idtoken = bearer.split(" ")[1];
       admin
@@ -61,9 +64,9 @@ client.connect((err) => {
         .then((decodedToken) => {
           const decodedEmail = decodedToken.email;
           console.log({ decodedEmail }, { userEmail });
-          if (decodedEmail === userEmail)
+          if (decodedEmail == userEmail)
             appointmentCollection
-              .find({ email: userEmail })
+              .find({ email: 'jakaria@gmail.com' })
               .toArray((err, document) => {
                 res.send(document);
               });
@@ -71,8 +74,7 @@ client.connect((err) => {
         .catch((error) => {
           // Handle error
         });
-    }else{
-      res.status(401).send('un authorized access')
+    } else {
     }
   });
 });
