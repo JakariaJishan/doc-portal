@@ -4,7 +4,7 @@ import PatientsTable from './PatientsTable';
 const Patients = () => {
     const [patients, setPatients] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allPatients')
+        fetch('http://localhost:5000/patients')
         .then(res => res.json())
         .then(data => setPatients(data))
     }, [])

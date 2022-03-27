@@ -5,18 +5,17 @@ const MongoClient = require("mongodb").MongoClient;
 const port = 5000;
 const cors = require("cors");
 require("dotenv").config();
+const admin = require("firebase-admin");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.PASS}@cluster0.7e5ei.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-
+const uri = process.env.DB_URL;
 app.get("/", (req, res) => {
   res.send("port listing");
 });
 
-const admin = require("firebase-admin");
 
 const serviceAccount = require("./config/doc-portal-backend-firebase-adminsdk-aiz1i-720a4fb8b4.json");
 
@@ -29,7 +28,6 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 
-
 client.connect((err) => {
   const appointmentCollection = client
     .db("doctorsPortal")
@@ -41,6 +39,11 @@ client.connect((err) => {
       console.log(result);
     });
   });
+  app.get('/patients', (req, res) => {
+    appointmentCollection.find({}).toArray((err, document) => {
+      res.send(document)
+    })
+  })
   app.post("/appointmentsByDate", (req, res) => {
     const date = req.body;
     // console.log(date.newDate);
@@ -53,9 +56,7 @@ client.connect((err) => {
   app.get("/allPatients", (req, res) => {
     const bearer = req.headers.authorization;
     const userEmail = req.query.email;
-    appointmentCollection.find({}).toArray((err, document) => {
-      res.send(document);
-    });
+
     if (bearer && bearer.startsWith("Bearer ")) {
       const idtoken = bearer.split(" ")[1];
       admin
@@ -66,7 +67,7 @@ client.connect((err) => {
           console.log({ decodedEmail }, { userEmail });
           if (decodedEmail == userEmail)
             appointmentCollection
-              .find({ email: 'jakaria@gmail.com' })
+              .find({ email: userEmail })
               .toArray((err, document) => {
                 res.send(document);
               });
