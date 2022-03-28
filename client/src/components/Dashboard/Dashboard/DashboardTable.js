@@ -1,17 +1,19 @@
 import React from "react";
 
 const DashboardTable = (props) => {
-  const { name, contact,email } = props.items;
- 
+  const { name, contact, age, weight , service, appointmentDate} = props.items;
+  console.log(props);
   return (
-    <div>
-      <div className="grid grid-cols-4 gap-3 font-bold my-3 ">
-        <p >{props.index}</p>
-        <p>{email}</p>
-        <p>{name}</p>
-        <p >{contact}</p>
-      </div>
-    </div>
+    <tbody>
+      <tr>
+        <td className="p-3">{props.index + 1}</td>
+        <td className="p-3">{name}</td>
+        <td className="p-3">{contact}</td>
+        <td className="p-3">{age}</td>
+        <td className="p-3">{weight}</td>
+        <td className="p-3">{service}</td>
+      </tr>
+    </tbody>
   );
 };
 

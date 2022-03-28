@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { app } from "../../firebase.config";
 
 const Login = ({ setCollectUser }) => {
-  
   const navigate = useNavigate();
   const handleLogIn = () => {
     const provider = new GoogleAuthProvider();
@@ -19,6 +18,7 @@ const Login = ({ setCollectUser }) => {
         fireAuthToken();
         sessionStorage.setItem("userEmail", user.email);
         sessionStorage.setItem("userPhoto", user.photoURL);
+        sessionStorage.setItem("displayName", user.displayName);
         navigate("/appointment");
         // ...
       })

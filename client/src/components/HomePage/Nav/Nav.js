@@ -12,7 +12,7 @@ const Nav = () => {
   const user = sessionStorage.getItem("userEmail");
   const navigate = useNavigate();
   const handleSignOut = () => {
-    sessionStorage.removeItem("userEmail");
+    sessionStorage.clear();
     navigate("/");
   };
   const userPhoto = sessionStorage.getItem("userPhoto");
