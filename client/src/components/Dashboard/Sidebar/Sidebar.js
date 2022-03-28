@@ -1,11 +1,16 @@
-import { faArrowRightFromBracket, faCalendar, faDashboard, faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightFromBracket, faCalendar, faDashboard, faHouseUser, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import "react-pro-sidebar/dist/css/styles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const navigate = useNavigate();
+  const handleSignOut = () => {
+    sessionStorage.removeItem("userEmail");
+    navigate("/");
+  };
   return (
     <div>
       {/* {showSidebar ? (
@@ -50,7 +55,16 @@ const Sidebar = () => {
         >
           <FontAwesomeIcon icon={faUserGroup}></FontAwesomeIcon> Patients
         </Link>
-        <button className="fixed bottom-5 bg-default px-4 py-3 rounded-md"> <FontAwesomeIcon className="mr-3" icon={faArrowRightFromBracket}></FontAwesomeIcon>Log Out</button>
+        <Link
+          to="/"
+          onClick={() => setShowSidebar(false)}
+          className="  font-semibold text-white mb-3 focus:text-gray-700"
+        >
+          <FontAwesomeIcon icon={faHouseUser}></FontAwesomeIcon> Home
+        </Link>
+        
+       
+        <button onClick={ handleSignOut}className="fixed bottom-5 bg-default px-4 py-3 rounded-md"> <FontAwesomeIcon className="mr-3" icon={faArrowRightFromBracket}></FontAwesomeIcon>Log Out</button>
       </div>
     </div>
   );

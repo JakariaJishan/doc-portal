@@ -1,11 +1,8 @@
-import { useContext } from "react";
-import { Navigate } from "react-router-dom";
-import { LoginContext } from "../../App";
+import { Navigate, Outlet } from "react-router-dom";
 
-const PrivateRoute = ({ children }) => {
-  const value = useContext(LoginContext);
-  const user = value.email;
-  return user ? children : <Navigate to="/login" />;
+const PrivateRoute = () => {
+  const user = sessionStorage.getItem('userEmail')
+  return user ? <Outlet/> : <Navigate to="/login" replace/>;
 };
 
 export default PrivateRoute;

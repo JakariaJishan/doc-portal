@@ -1,16 +1,10 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { app } from "../../firebase.config";
 
-
-
-
 const Login = ({ setCollectUser }) => {
-  const [loggedInUser, setLoggedInUser] = useState({
-    name: "",
-    email: "",
-  });
+  
   const navigate = useNavigate();
   const handleLogIn = () => {
     const provider = new GoogleAuthProvider();
@@ -22,9 +16,9 @@ const Login = ({ setCollectUser }) => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        setLoggedInUser({ name: user.displayName, email: user.email });
         fireAuthToken();
-        sessionStorage.setItem('userEmail', user.email);
+        sessionStorage.setItem("userEmail", user.email);
+        sessionStorage.setItem("userPhoto", user.photoURL);
         navigate("/appointment");
         // ...
       })
@@ -40,10 +34,9 @@ const Login = ({ setCollectUser }) => {
         // ...
       });
   };
-  setCollectUser(loggedInUser);
 
   const fireAuthToken = () => {
-      getAuth()
+    getAuth()
       .currentUser.getIdToken(/* forceRefresh */ true)
       .then(function (idToken) {
         sessionStorage.setItem("authToken", idToken);

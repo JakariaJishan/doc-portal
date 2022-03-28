@@ -1,10 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
-import { LoginContext } from "../../../App";
+import React, { useEffect, useState } from "react";
 import DashboardTable from "./DashboardTable";
 
 const Dashboard = () => {
   const [patients, setPatients] = useState([]);
-  const value = useContext(LoginContext);
   const userEmail= sessionStorage.getItem('userEmail');
   useEffect(() => {
     fetch("http://localhost:5000/allPatients?email="+userEmail, {

@@ -1,36 +1,43 @@
 import { Transition } from "@headlessui/react";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdown,setDropdown] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
   const handleDropdown = () => {
     setDropdown(!dropdown);
-  }
+  };
   const user = sessionStorage.getItem("userEmail");
+  const navigate = useNavigate();
+  const handleSignOut = () => {
+    sessionStorage.removeItem("userEmail");
+    navigate("/");
+  };
+  const userPhoto = sessionStorage.getItem("userPhoto");
   return (
     <div>
       <nav className="">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between md:justify-end h-16">
             <div className="flex items-center justify-between ">
-              <div className="flex-shrink-0">
+              {/* <div className="flex-shrink-0">
                 <img
                   className="h-8 w-8 md:hidden"
                   src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                   alt="Workflow"
                 />
-              </div>
+              </div> */}
               <div className="hidden md:block ">
                 <div className="ml-10 flex justify-center items-center space-x-4 ">
-                  <a
+                  <Link
+                    to="/"
                     href="#home"
                     className=" bg-gradient-to-r hover:from-[#19D3AF] hover:to-[#0FCFEA] text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Home
-                  </a>
+                  </Link>
 
                   <a
                     href="#about"
@@ -66,12 +73,13 @@ const Nav = () => {
                   </a>
                   {!user ? (
                     <Link to="/login">
-                      <button className="btn">Log In</button>
+                      <button className=" text-gray-300 bg-gradient-to-r from-[#19D3AF] to-[#0FCFEA] text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        Log In
+                      </button>
                     </Link>
                   ) : (
-                   
                     <div class="ml-5 relative">
-                      <div className=''>
+                      <div className="">
                         <button
                           type="button"
                           onClick={handleDropdown}
@@ -80,43 +88,45 @@ const Nav = () => {
                           aria-expanded="false"
                           aria-haspopup="true"
                         >
-                          <span class="sr-only">Open user menu</span>
                           <img
                             class="h-10 w-10 rounded-full"
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt=""
+                            src={userPhoto}
+                            alt="asd"
                           />
                         </button>
                       </div>
 
-                       {
-                         dropdown ? (<div
+                      {dropdown ? (
+                        <div
                           class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                           role="menu"
                           aria-orientation="vertical"
                           aria-labelledby="user-menu-button"
                           tabindex="-1"
                         >
-                          <a
+                          <Link
+                            to="/dashboard/dashboard"
                             href="#"
                             class="block px-4 py-2 text-sm text-gray-700"
                             role="menuitem"
                             tabindex="-1"
                             id="user-menu-item-0"
                           >
-                            Your Profile
-                          </a>
-                          <a
+                            Dashboard
+                          </Link>
+                          <Link
+                            to="/appointment"
                             href="#"
                             class="block px-4 py-2 text-sm text-gray-700"
                             role="menuitem"
                             tabindex="-1"
                             id="user-menu-item-1"
                           >
-                            Settings
-                          </a>
+                            Appointment
+                          </Link>
                           <a
                             href="#"
+                            onClick={handleSignOut}
                             class="block px-4 py-2 text-sm text-gray-700"
                             role="menuitem"
                             tabindex="-1"
@@ -124,18 +134,18 @@ const Nav = () => {
                           >
                             Sign out
                           </a>
-                        </div>) : null
-                       }
+                        </div>
+                      ) : null}
                     </div>
                   )}
                 </div>
               </div>
             </div>
-            <div className="-mr-2 flex md:hidden ">
+            <div className="-mr-2  flex md:hidden ">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className=" inline-flex items-center justify-center p-2 rounded-md text-gray-400 "
+                className=" flex items-center absolute left-3 top-6 justify-center p-2 rounded-md text-gray-400 "
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
@@ -189,8 +199,8 @@ const Nav = () => {
         >
           {(ref) => (
             <div
-              className="absolute w-full backdrop-blur-md  right-0 z-10  h-screen  md:hidden"
-              id="mobile-menu"
+              className="absolute w-full backdrop-blur-md   right-0 z-10  h-screen  md:hidden"
+              id="mobile-menu "
             >
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a
@@ -233,9 +243,74 @@ const Nav = () => {
                 >
                   Contact Us
                 </a>
-                <Link to="/login">
-                  <button className="btn">Log In</button>
-                </Link>
+                {!user ? (
+                  <Link to="/login">
+                    <button className="w-full my-5  bg-gradient-to-r from-[#19D3AF] to-[#0FCFEA] text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                      Log In
+                    </button>
+                  </Link>
+                ) : (
+                  <div class=" absolute right-5 -top-10">
+                    <div className=" ">
+                      <button
+                        type="button"
+                        onClick={handleDropdown}
+                        className="bg-gray-800 flex justify-center items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                        id="user-menu-button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                      >
+                        <span class="sr-only">Open user menu</span>
+                        <img
+                          class="h-10 w-10 rounded-full"
+                          src={userPhoto}
+                          alt=""
+                        />
+                      </button>
+                    </div>
+
+                    {dropdown ? (
+                      <div
+                        class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="user-menu-button"
+                        tabindex="-1"
+                      >
+                       <Link
+                            to="/dashboard/dashboard"
+                            href="#"
+                            class="block px-4 py-2 text-sm text-gray-700"
+                            role="menuitem"
+                            tabindex="-1"
+                            id="user-menu-item-0"
+                          >
+                            Dashboard
+                          </Link>
+                          <Link
+                            to="/appointment"
+                            href="#"
+                            class="block px-4 py-2 text-sm text-gray-700"
+                            role="menuitem"
+                            tabindex="-1"
+                            id="user-menu-item-1"
+                          >
+                            Appointment
+                          </Link>
+                          <a
+                            href="#"
+                            onClick={handleSignOut}
+                            class="block px-4 py-2 text-sm text-gray-700"
+                            role="menuitem"
+                            tabindex="-1"
+                            id="user-menu-item-2"
+                          >
+                            Sign out
+                          </a>
+                      </div>
+                    ) : null}
+                  </div>
+                )}
               </div>
             </div>
           )}
