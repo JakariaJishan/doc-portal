@@ -3,16 +3,14 @@ import React from "react";
 const AppointmentTable = (props) => {
   const { name, contact } = props.item;
   return (
-    <div>
-      <div className="grid grid-cols-3 gap-3 font-bold my-3 ">
-        <p>{name}</p>
-        <p className="">{contact}</p>
-        <select>
+    <tr>
+      <td className="p-3">{name}</td>
+      <td className="p-3">{contact}</td>
+      <td className="p-3"><select>
           <option className="bg-textDefault">visited</option>
           <option>not visited</option>
-        </select>
-      </div>
-    </div>
+        </select></td>
+    </tr>
   );
 };
 

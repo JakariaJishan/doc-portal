@@ -2,6 +2,7 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { format } from "date-fns";
 import React from "react";
+import { Link } from "react-router-dom";
 import './InnerBlog.css';
 const InnerBlog = (props) => {
   const { figure, name, title, heading } = props.items;
@@ -28,7 +29,8 @@ const InnerBlog = (props) => {
               <p className="text-[#fff]">{date}</p>
               <br />
               <p className="text-white text-2xl font-semibold">{heading}</p>
-              <FontAwesomeIcon size="2x" className=" bottom-9 absolute  fa-beat text-white font-semibold" icon={faArrowRightLong} />
+              <Link to="/appointment"><FontAwesomeIcon  size="2x" className=" bottom-9 absolute  fa-beat text-white font-semibold" icon={faArrowRightLong} /></Link>
+              
             </div>
           </div>
           {/* <div className="">

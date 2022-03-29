@@ -1,7 +1,11 @@
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import GoogleButton from "react-google-button";
+import { Link, useNavigate } from "react-router-dom";
 import { app } from "../../firebase.config";
+import loginImg from "../../images/login.png";
 
 const Login = ({ setCollectUser }) => {
   const navigate = useNavigate();
@@ -46,11 +50,22 @@ const Login = ({ setCollectUser }) => {
       });
   };
   return (
-    <div>
-      <button className="btn" onClick={handleLogIn}>
-        log in with google
-      </button>
-    </div>
+    <section>
+      <div className="grid md:grid-cols-2 gap-5 place-items-center">
+        <div className="text-center  p-5 ">
+          <GoogleButton
+            onClick={handleLogIn}
+          />
+          <br />
+          <Link className="" to="/">
+            go to home <FontAwesomeIcon className="" icon={faArrowRightLong} beat/>
+          </Link>
+        </div>
+        <div>
+          <img src={loginImg} alt="nth"></img>
+        </div>
+      </div>
+    </section>
   );
 };
 

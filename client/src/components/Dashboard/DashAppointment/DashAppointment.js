@@ -19,7 +19,7 @@ const DashAppointment = () => {
   return (
     <div className="left-32 md:left-72 absolute">
       <p className="font-bold m-3">Appointments</p>
-      <div className="grid md:grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-2 gap-5">
         <Calendar
           onChange={onChange}
           value={value}

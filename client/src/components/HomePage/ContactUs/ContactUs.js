@@ -38,7 +38,7 @@ const ContactUs = () => {
               required
               className="w-full text-lg rounded outline-none h-40 px-5 py-4 text-gray-400"
             ></textarea>
-            <button className="bg-gradient-to-r my-5 from-[#19D3AF] to-[#0FCFEA]  px-16 py-2 font-bold text-white rounded mb-5">
+            <button onClick={() => alert('submitted successfully')} className="bg-gradient-to-r my-5 from-[#19D3AF] to-[#0FCFEA]  px-16 py-2 font-bold text-white rounded mb-5">
               Submit
             </button>
           </div>
