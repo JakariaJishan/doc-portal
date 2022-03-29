@@ -11,6 +11,8 @@ const Modal = ({ showModal, setShowModal, name }) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const userEmail = sessionStorage.getItem("userEmail");
+  const userName = sessionStorage.getItem("displayName");
   const onSubmit = (data) => {
     data.date = new Date();
     data.appointmentDate = appointmentDate ;
@@ -24,7 +26,6 @@ const Modal = ({ showModal, setShowModal, name }) => {
       if(success ){
         setShowModal(false)
         alert('appointment created successfully');
-        console.log(success)
       }
     })
   };
@@ -56,16 +57,12 @@ const Modal = ({ showModal, setShowModal, name }) => {
                       className="flex flex-col"
                     >
                       <input
-                        {...register("name", { required: true })}
+                        value={userName}
                         placeholder="Your Name"
                         className="border-2 md:p-3 p-2 rounded-md my-3"
                       />
                       <input
-                        {...register("email", {
-                          required: true,
-                          pattern:
-                            /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-                        })}
+                        value={userEmail}
                         placeholder="Email"
                         className="border-2 md:p-3 p-2 rounded-md my-3"
                       />
