@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
-const port = 5000;
+const port = process.env.PORT || 5000;
 const cors = require("cors");
 require("dotenv").config();
 const admin = require("firebase-admin");
