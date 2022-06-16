@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const uri = process.env.DB_URL;
-app.get("/", (req, res) => {
+app.get("https://docportalapp.herokuapp.com/", (req, res) => {
   res.send("port listing");
 });
 
@@ -32,19 +32,19 @@ client.connect((err) => {
   const appointmentCollection = client
     .db("doctorsPortal")
     .collection("appointments");
-  app.post("/addAppointment", (req, res) => {
+  app.post("https://docportalapp.herokuapp.com/addAppointment", (req, res) => {
     const appointment = req.body;
     res.send(appointment);
     appointmentCollection.insertOne(appointment).then((result) => {
       console.log(result);
     });
   });
-  app.get('/patients', (req, res) => {
+  app.get('https://docportalapp.herokuapp.com/patients', (req, res) => {
     appointmentCollection.find({}).toArray((err, document) => {
       res.send(document)
     })
   })
-  app.post("/appointmentsByDate", (req, res) => {
+  app.post("https://docportalapp.herokuapp.com/appointmentsByDate", (req, res) => {
     const date = req.body;
     // console.log(date.newDate);
     appointmentCollection
@@ -53,7 +53,7 @@ client.connect((err) => {
         res.send(document);
       });
   });
-  app.get("/allPatients", (req, res) => {
+  app.get("https://docportalapp.herokuapp.com/allPatients", (req, res) => {
     const bearer = req.headers.authorization;
     const userEmail = req.query.email;
 
